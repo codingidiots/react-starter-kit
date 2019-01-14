@@ -1,18 +1,18 @@
 ## postcss: No PostCSS Config found in
-**When**
+#### When
 ```
 $ npm run webpack:dev
 ```
-**Message**
+#### Message
 ```
 Error: No PostCSS Config found in:
 ```
-**coding**
+#### coding
 ```
 <<src/index.js>>
 import './index.style.css';
 ```
-**solution**
+#### solution
 - `postcss.config.js`에 있는 관련된 패키지를 모두 설치함.
   ```
     module.exports = {
@@ -27,16 +27,16 @@ import './index.style.css';
   ```
   npm install sugarss postcss-import postcss-preset-env cssnano --save-dev
   ```
-**reference**
+#### reference
 - https://github.com/postcss/postcss-loader/issues/311#issuecomment-342564332
 ------
 
 ## postcss: SyntaxError (1:6) Unnecessary curly bracket
-**When**
+#### When
 ```
 $ npm run webpack:dev
 ```
-**Message**
+#### Message
 ```
 SyntaxError (1:6) Unnecessary curly bracket
 > 1 | .App {
@@ -44,15 +44,15 @@ SyntaxError (1:6) Unnecessary curly bracket
   2 |   text-align: center;
   3 | }
 ```
-**solution**
+#### solution
 - `sugarss` 에서 문제가 나오는 것임
 
-**Refrence**
+#### Refrence
 - https://github.com/postcss/postcss/issues/1062
 
 ------
 ## svg태그가 아니라 string형태로 나옴
-**coding**
+#### coding
 ```
 import logo from './logo.svg';
 ...
@@ -60,3 +60,7 @@ import logo from './logo.svg';
   {logo}
 </div>
 ```
+
+#### solution
+- `file-loader` 를 이용하여 이미지 파일을 불러옴
+- `svg-inline-loader` 은 더이상 사용하지 않아서 지움
